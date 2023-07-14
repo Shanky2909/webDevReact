@@ -1,5 +1,6 @@
 import { Switch, Route, Link } from 'react-router-dom';
 import './styles/index.css';
+import Home from '../Home';
 
 const NavigationBar = () => {
   return (
@@ -12,14 +13,20 @@ const NavigationBar = () => {
           <li key='MyQuiz'>
             <Link to='/my-quizes'>My Quizes</Link>
           </li>
+          <li key='PlayQuiz'>
+            <Link to='/play-quizes'>Play Quizes</Link>
+          </li>
         </ul>
       </div>
       <Switch>
         <Route path='/' exact>
-          <div>Home</div>
+          <Home />
         </Route>
         <Route path='/my-quizes'>
           <div>My Quizes</div>
+        </Route>
+        <Route path='/play-quizes'>
+          <div>Play Quizes</div>
         </Route>
       </Switch>
     </>
@@ -27,3 +34,6 @@ const NavigationBar = () => {
 };
 
 export default NavigationBar;
+
+//  ul= unordered list, ol= ordered list
+// li = list item
